@@ -1,3 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
 body {
 	background-color: black;
+	overflow: hidden;
+	margin: 0;
+
+	color: white;
+	font-size: 1.5em;
+	font-family: Raleway, sans-serif;
+	letter-spacing: .1em;
+}
+
+.falling {
+	position: absolute;
+	margin: 0;
+	padding: 0;
+
+	top: 0px;
 }
