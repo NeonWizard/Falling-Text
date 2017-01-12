@@ -8,7 +8,8 @@ function fall() {
 		let fallItem = fallItems[i];
 		
 		// Increase the position property
-		fallItem.fallPos += (fallInterval*fallItem.fallSpeed) * .1;
+		let speed = fallInterval * ((fallItem.depth + 4) / 4)
+		fallItem.fallPos += speed * .1;
 
 		// Delete the element once it's fallen too far
 		if (fallItem.fallPos > window.innerHeight) {
@@ -29,10 +30,10 @@ function createFallingText(text) {
 	// Set properties of the faller
 	faller.fallPos = 0; // Start at top of screen
 	faller.style.left = (Math.random() * (window.innerWidth - 200)) + "px"; // Start at random x location
-	faller.fallSpeed = Math.random() * 3 + 1; // Start at random speed (1, 4)
+	faller.depth = Math.floor(Math.random() * 4 + 1); // Start at random depth (1, 5) exclusive
+	faller.style.color = "rgb(" + 63*faller.depth + ", " + 63*faller.depth + ", " + 63*faller.depth + ")";
 
 	document.body.appendChild(faller);
 }
 
-setInterval(function() { createFallingText("penis from sky"); }, 500);
-createFallingText("this is falling text");
+setInterval(function() { createFallingText("art"); }, 500);
