@@ -37,4 +37,4 @@ function createFallingText(text) {
 	document.body.appendChild(faller);
 }
 
-setInterval(function() { createFallingText("penis from sky"); }, 100);
+setInterval(function() { createFallingText("sample text"); }, 100);
