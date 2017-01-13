@@ -1,4 +1,4 @@
-let fallInterval = 5;
+let fallInterval = 10;
 
 setInterval(fall, fallInterval);
 
