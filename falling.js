@@ -29,10 +29,13 @@ function createFallingText(text) {
 
 	// Set properties of the faller
 	faller.fallPos = 0; // Start at top of screen
-	faller.style.left = (Math.random() * (window.innerWidth - 200)) + "px"; // Start at random x location
 	faller.depth = Math.floor(Math.random() * 4 + 1); // Start at random depth (1, 5) exclusive
 	faller.style.color = "rgb(" + 63*faller.depth + ", " + 63*faller.depth + ", " + 63*faller.depth + ")";
 	faller.style.fontSize = (1 + (faller.depth-4)*.1) + "em";
+
+	setTimeout(() => {
+		faller.style.left = (Math.random() * (window.innerWidth - faller.clientWidth)) + "px"; // Start at random x location		
+	}, 0);
 
 	document.body.appendChild(faller);
 }
