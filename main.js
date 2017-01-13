@@ -1,8 +1,7 @@
-let curFaller = null;
+let input = document.getElementById("input");
 
-function input_onKeyPress() {
-	if (curFaller) { window.clearInterval(curFaller); }
-
-	let inputbox = document.getElementById("input");
-	curFaller = setInterval(function() { createFallingText(inputbox.value); }, 100);
-}
+setInterval(() => {
+	if (input.value != "") {
+		createFallingText(input.value);
+	}
+}, 100);
