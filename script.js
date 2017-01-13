@@ -32,8 +32,9 @@ function createFallingText(text) {
 	faller.style.left = (Math.random() * (window.innerWidth - 200)) + "px"; // Start at random x location
 	faller.depth = Math.floor(Math.random() * 4 + 1); // Start at random depth (1, 5) exclusive
 	faller.style.color = "rgb(" + 63*faller.depth + ", " + 63*faller.depth + ", " + 63*faller.depth + ")";
+	faller.style.fontSize = (1 + (faller.depth-4)*.1) + "em";
 
 	document.body.appendChild(faller);
 }
 
-setInterval(function() { createFallingText("art"); }, 500);
+setInterval(function() { createFallingText("penis from sky"); }, 100);
