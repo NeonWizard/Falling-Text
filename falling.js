@@ -36,5 +36,3 @@ function createFallingText(text) {
 
 	document.body.appendChild(faller);
 }
-
-setInterval(function() { createFallingText("sample text"); }, 100);

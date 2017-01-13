@@ -22,8 +22,7 @@ body {
 #inputbox {
 	padding: 60px 75px;
 	background-color: rgba(25, 25, 25, 0.35);
-	/*background-color: rgb(25, 25, 25);*/
-	border-radius: 50px;
+	border-radius: 40px;
 
 	position: absolute;
 	top: 50%;
