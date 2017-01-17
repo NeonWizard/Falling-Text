@@ -8,11 +8,14 @@ function fall() {
 		let fallItem = fallItems[i];
 		
 		// Increase the position property
-		let speed = fallInterval * ((fallItem.depth + 4) / 4)
+		let speed = fallInterval * ((fallItem.depth + 4) / 4);
+		if (modifiers.reverse) {
+			speed *= -1;
+		}
 		fallItem.fallPos += speed * .1;
 
 		// Delete the element once it's fallen too far
-		if (fallItem.fallPos > window.innerHeight) {
+		if ((!modifiers.reverse && fallItem.fallPos > window.innerHeight) || (modifiers.reverse && fallItem.fallPos < -50)) {
 			document.body.removeChild(fallItem);
 		}
 
@@ -27,9 +30,13 @@ function createFallingText(text) {
 	faller.appendChild(document.createTextNode(text));
 	faller.className = "falling";
 
-	// Start at top of screen
+	// Start at top of screen unless modifiers.reverse is true
 	faller.fallPos = -50;
 	faller.style.top = "-50px";
+	if (modifiers.reverse) {
+		faller.fallPos = window.innerHeight + 50;
+		faller.style.top = window.innerHeight + 50 + "px";
+	}
 
 	// Style to give depth
 	faller.depth = Math.floor(Math.random() * 4 + 1); // Start at random depth (1, 5) exclusive
