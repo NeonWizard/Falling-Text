@@ -8,7 +8,7 @@ Create a simple client web application that demonstrates certain requirements.
 - [x] **Events**: use events, such as onclick, to make the application functional and interactive.
 - [x] **Randomness**: integrate an element of randomness into the application, because randomness is funness.
 - [x] **Data**: integrate some representation of data into the application, using JavaScript arrays and objects to store it.
-- [ ] **Ajax**: use the XMLHttpRequest object to receive data from a server and represent it within the application.
+- [x] **Ajax**: use the XMLHttpRequest object to receive data from a server and represent it within the application.
 
 <br>
 
