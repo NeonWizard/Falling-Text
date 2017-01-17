@@ -15,6 +15,8 @@ Create a simple client web application that demonstrates certain requirements.
 ## Usage
 - Visit index.html and type text into the center box to have the text fall from the top of the screen.
 - Include `?text=` and then some text to have it fall without the center box.
+- Include `?rainbow=true` to enable randomly multi-colored text.
+- Include `?beeQuotes=true` to have a randomly chosen quote from the Bee Movie fall from the top of the screen.
 
 <br>
 
