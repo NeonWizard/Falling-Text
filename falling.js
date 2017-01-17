@@ -41,5 +41,10 @@ function createFallingText(text) {
 		faller.style.left = (Math.random() * (window.innerWidth - faller.clientWidth)) + "px"; // Start at random x location		
 	}, 0);
 
+	// Apply modifiers
+	if (modifiers.rainbow) {
+		faller.style.color = "rgb(" + Math.floor(Math.random() * 255) + ", " + Math.floor(Math.random() * 255) + ", " + Math.floor(Math.random() * 255) + ")";
+	}
+
 	document.body.appendChild(faller);
 }
