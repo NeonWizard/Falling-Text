@@ -1,14 +1,5 @@
 let modifiers = {rainbow: false, reverse: false, beeQuotes: false};
 
-// Start a 1/10 second timer that spawns a new falling text object with input's text
-let input = document.getElementById("input");
-setInterval(() => {
-	if (input.value != "") {
-		createFallingText(input.value);
-	}
-}, 100);
-
-
 // -----------
 //  Url stuff
 // -----------
@@ -41,3 +32,15 @@ if (modifiers.beeQuotes) {
 document.getElementById("toggleRainbow").addEventListener("click", function(e) {
 	modifiers.rainbow = !modifiers.rainbow;
 });
+
+
+// ----------------------------
+//   Start the falling timer
+// ----------------------------
+// Start a 1/10 second timer that spawns a new falling text object with input's text
+let input = document.getElementById("input");
+setInterval(() => {
+	if (input.value != "") {
+		createFallingText(input.value);
+	}
+}, 100);

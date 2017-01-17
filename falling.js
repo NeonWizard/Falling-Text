@@ -41,7 +41,9 @@ function createFallingText(text) {
 	// Style to give depth
 	faller.depth = Math.floor(Math.random() * 4 + 1); // Start at random depth (1, 5) exclusive
 	faller.style.color = "rgb(" + 63*faller.depth + ", " + 63*faller.depth + ", " + 63*faller.depth + ")";
-	faller.style.fontSize = (1 + (faller.depth-4)*.1) + "em";
+	let fontSizeMod = 1;
+	if (modifiers.beeQuotes) fontSizeMod = .75;
+	faller.style.fontSize = (1 + (faller.depth-4)*.1) * fontSizeMod + "em";
 
 	// Position the text horizontally without overflowing the right side of the screen
 	setTimeout(() => {
