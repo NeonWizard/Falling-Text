@@ -24,3 +24,9 @@ if (text) {
 // Set modifiers
 modifiers.rainbow = (params.get("rainbow") === "true");
 modifiers.reverse = (params.get("reverse") === "true");
+
+
+// Buttons
+document.getElementById("toggleRainbow").addEventListener("click", function(e) {
+	modifiers.rainbow = !modifiers.rainbow;
+});
