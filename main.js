@@ -1,4 +1,4 @@
-let modifiers = {rainbow: false, reverse: false};
+let modifiers = {rainbow: false, reverse: false, beeQuotes: false};
 
 // Start a 1/10 second timer that spawns a new falling text object with input's text
 let input = document.getElementById("input");
@@ -9,24 +9,35 @@ setInterval(() => {
 }, 100);
 
 
+// -----------
+//  Url stuff
+// -----------
 // Retrieve information from URL
 let params = new URLSearchParams(window.location.search);
-
-// If there's a text option provided in the URL, don't create a textbox in the middle and
-// set falling text to be the text in the URL
-let text = params.get("text");
-if (text) {
-	// document.getElementById("inputBox").style.visibility = "hidden";
-	document.getElementById("inputBox").style.display = "none";
-	input.value = text;
-}
 
 // Set modifiers
 modifiers.rainbow = (params.get("rainbow") === "true");
 modifiers.reverse = (params.get("reverse") === "true");
+modifiers.beeQuotes = (params.get("beeQuotes") === "true");
+
+// If there's a text or beeQuotes option provided in the URL, don't create a textbox in the middle
+let text = params.get("text");
+if (text || modifiers.beeQuotes) {
+	document.getElementById("inputBox").style.display = "none";
+}
+
+// Set the falling text to either the text query or a quote from the bee API
+if (text) input.value = text;
+if (modifiers.beeQuotes) {
+	getBeeQuote().then((quote) => {
+		input.value = quote;
+	})
+}
 
 
-// Buttons
+// ---------------
+//  Button events
+// ---------------
 document.getElementById("toggleRainbow").addEventListener("click", function(e) {
 	modifiers.rainbow = !modifiers.rainbow;
 });
