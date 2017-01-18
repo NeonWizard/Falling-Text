@@ -7,7 +7,7 @@ function getBeeQuote() {
     return Promise.reject("Bee Quotes disabled!")
   }
 
-  return fetch(new Request("http://localhost:3054/line"))
+  return fetch(new Request("http://wizardlywonders.xyz:3054/line"))
   .then((response) => {
     return response.json()
   }).then((data) => {
