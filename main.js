@@ -1,4 +1,4 @@
-let input = document.getElementById("input");
+var input = document.getElementById("input");
 
 let modifiers = {rainbow: false, reverse: false, beeQuotes: false};
 
