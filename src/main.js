@@ -29,10 +29,10 @@ modifiers.rainbow = (params.get("rainbow") === "true");
 modifiers.reverse = (params.get("reverse") === "true");
 modifiers.beeQuotes = (params.get("beeQuotes") === "true");
 
-// If there's a text or beeQuotes option provided in the URL, don't create a textbox in the middle
+// If there isn't default text and bee quotes aren't enabled, then show the input box in the middle
 let text = params.get("text");
-if (text || modifiers.beeQuotes) {
-	document.getElementById("inputBox").style.display = "none";
+if (!text && !modifiers.beeQuotes) {
+	document.getElementById("inputBox").style.display = "block";
 }
 
 // Set the falling text to either the text query or a quote from the bee API

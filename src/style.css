@@ -20,8 +20,10 @@ body {
 }
 
 #inputBox {
+	/* Set display none by default to prevent glitchy disappearing on load with default text or bee quotes */
+	display: none;
+
 	padding: 60px 70px 70px 70px;
-	/*padding: 60px 70px;*/
 	background-color: rgba(25, 25, 25, 0.2);
 	border: 1px solid rgb(100, 100, 100);
 	border-radius: 30px;
@@ -31,12 +33,6 @@ body {
 	left: 50%;
 	transform: translate(-50%, -50%);
 
-/*	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	align-content: center;
-*/
 	z-index: 1;
 }
 
