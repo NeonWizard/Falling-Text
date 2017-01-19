@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+body {
+	background-color: black;
+	overflow: hidden;
+	margin: 0;
+
+	color: white;
+	font-size: 1.5em;
+	font-family: Raleway, sans-serif;
+	letter-spacing: .1em;
+}
+
+.falling {
+	position: absolute;
+	margin: 0;
+	padding: 0;
+
+	top: 0px;
+}
+
+#inputBox {
+	padding: 60px 70px 70px 70px;
+	/*padding: 60px 70px;*/
+	background-color: rgba(25, 25, 25, 0.2);
+	border: 1px solid rgb(100, 100, 100);
+	border-radius: 30px;
+
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+/*	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	align-content: center;
+*/
+	z-index: 1;
+}
+
+#input {
+	font-size: 1.5em;
+	text-align: center;
+
+	/*background-color: rgba(25, 25, 25, 0.5);*/
+	background-color: black;
+	color: white;
+	border-width: 1px;
+	border-color: rgb(50, 50, 50);
+	border-radius: 15px;
+
+	outline-width: 0;
+	padding: 10px 0px;
+}
+
+#toggleRainbow {
+	background-color: rgba(50, 50, 50, .5);
+	border-color: rgb(50, 50, 50);
+	color: rgb(200, 200, 200);
+
+	position: absolute;
+	left: 50%;
+	top: 83%;
+	transform: translate(-50%, -50%);
+
+	font-size: .7em;
+	border-radius: 10px;
+	outline-width: 0;
+
+	padding: 5px 15px;
+}
+
+#toggleRainbow:active {
+	box-shadow: 0 1px 0 rgb(50, 50, 50);
+}
