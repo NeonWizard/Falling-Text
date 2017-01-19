@@ -3,7 +3,7 @@ let fallInterval = 10;
 setInterval(fall, fallInterval);
 
 function fall() {
-	fallItems = document.getElementsByClassName("falling");
+	let fallItems = document.getElementsByClassName("falling");
 	for (let i = 0; i < fallItems.length; i++) {
 		let fallItem = fallItems[i];
 		
