@@ -40,8 +40,21 @@ document.getElementById("toggleRainbow").addEventListener("click", function(e) {
 //   Start the falling timer
 // ----------------------------
 // Start a 1/10 second timer that spawns a new falling text object with input's text
-setInterval(() => {
-	if (input.value != "") {
-		createFallingText(input.value);
-	}
-}, 150);
+// let fallingTimer = setInterval(() => {
+// 	if (input.value != "") {
+// 		createFallingText(input.value);
+// 	}
+// }, 100);
+let fallingTimer = 0;
+
+function setSpawnRate(msRate) {
+	if (fallingTimer) clearInterval(fallingTimer);
+
+	fallingTimer = setInterval(() => {
+		if (input.value != "") {
+			createFallingText(input.value);
+		}
+	}, msRate);
+}
+
+setSpawnRate(100);
