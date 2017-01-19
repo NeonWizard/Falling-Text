@@ -44,4 +44,4 @@ setInterval(() => {
 	if (input.value != "") {
 		createFallingText(input.value);
 	}
-}, 100);
+}, 150);
