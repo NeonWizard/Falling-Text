@@ -1,7 +1,7 @@
 {
   "name": "falling-text",
   "scripts": {
-    "build": "babel src -d dist"
+    "build": "babel src -d dist; cp src/*.html dist; cp src/*.css dist"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0"
