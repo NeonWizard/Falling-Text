@@ -2,6 +2,22 @@ var input = document.getElementById("input");
 
 let modifiers = {rainbow: false, reverse: false, beeQuotes: false};
 
+
+// ---------------------------
+//   Falling interval setter
+// ---------------------------
+let fallingTimer = 0;
+function setSpawnRate(msRate) {
+	if (fallingTimer) clearInterval(fallingTimer);
+
+	fallingTimer = setInterval(() => {
+		if (input.value != "") {
+			createFallingText(input.value);
+		}
+	}, msRate);
+}
+
+
 // -----------
 //  Url stuff
 // -----------
@@ -23,7 +39,11 @@ if (text || modifiers.beeQuotes) {
 if (text) input.value = text;
 if (modifiers.beeQuotes) {
 	getBeeQuote().then((quote) => {
+		// Set input box's value to the quote (doesn't show up but used for data)
 		input.value = quote;
+		// Set spawn rate depending on length of the quote
+		let lengthMod = Math.floor(quote.length / 20);
+		setSpawnRate(100 + lengthMod*25);
 	})
 }
 
@@ -36,25 +56,5 @@ document.getElementById("toggleRainbow").addEventListener("click", function(e) {
 });
 
 
-// ----------------------------
-//   Start the falling timer
-// ----------------------------
-// Start a 1/10 second timer that spawns a new falling text object with input's text
-// let fallingTimer = setInterval(() => {
-// 	if (input.value != "") {
-// 		createFallingText(input.value);
-// 	}
-// }, 100);
-let fallingTimer = 0;
-
-function setSpawnRate(msRate) {
-	if (fallingTimer) clearInterval(fallingTimer);
-
-	fallingTimer = setInterval(() => {
-		if (input.value != "") {
-			createFallingText(input.value);
-		}
-	}, msRate);
-}
-
+// Start the falling timer
 setSpawnRate(100);
