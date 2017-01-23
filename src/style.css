@@ -23,7 +23,7 @@ body {
 	/* Set display none by default to prevent glitchy disappearing on load with default text or bee quotes */
 	display: none;
 
-	padding: 60px 70px 70px 70px;
+	padding: 60px 70px 30px 70px;
 	background-color: rgba(25, 25, 25, 0.2);
 	border: 1px solid rgb(100, 100, 100);
 	border-radius: 30px;
@@ -51,23 +51,36 @@ body {
 	padding: 10px 0px;
 }
 
-#toggleRainbow {
+#buttons {
+	display: flex;
+	justify-content: center;
+
+	margin-top: 30px;
+}
+
+#buttons button {
 	background-color: rgba(50, 50, 50, .5);
 	border-color: rgb(50, 50, 50);
-	color: rgb(200, 200, 200);
-
-	position: absolute;
-	left: 50%;
-	top: 83%;
-	transform: translate(-50%, -50%);
+	color: rgb(240, 240, 240);
 
 	font-size: .7em;
 	border-radius: 10px;
 	outline-width: 0;
 
-	padding: 5px 15px;
+	flex: 0 0 45%; /* Same width */
+
+	padding: 10px 15px;
 }
 
-#toggleRainbow:active {
+/*
+#buttons button + button {
+	margin-left: 10%;
+}*/
+
+#buttons button:active {
 	box-shadow: 0 1px 0 rgb(50, 50, 50);
 }
+
+/*#btn_beeQuote {*/
+	/* display: none; */ /* hidden by default, shown only when beeQuotes enabled */
+/*}*/
