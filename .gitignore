@@ -6,3 +6,6 @@ src/
 yarn.lock
 readme.md
 package.json
+
+*.sublime-workspace
+*.sublime-project
