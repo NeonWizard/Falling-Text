@@ -20,18 +20,23 @@
   </div>
 
   <div id="sharing-window">
-    <h1>OH HELLO THERE</h1>
-    <p>http://wizardlywonders.xyz/fallingtext/?text=whoah</p>
+    <div>
+    <h1>Share Text</h1>
+    <p>Select the text and press ctrl+c, or hit the "Copy to clipboard" button.</p>
+    </div>
+    <div>
+    <input id="sharing-input" type="text" value="http://wizardlywonders.xyz/fallingtext/?text=whoah" readonly>
     <div id="sharing-buttons">
-      <button>Copy to clipboard</button>
-      <button>Close</button>
+      <button onclick="copyShareURL()">Copy to clipboard</button>
+      <button onclick="closeSharingWindow()">Close</button>
+    </div>
     </div>
   </div>
 
   <div id="footer">
     <div id="footer-buttons">
       <button id="btn_beeQuote">New quote</button>
-      <button id="btn_share">Share text</button>
+      <button id="btn_share" onclick="openSharingWindow()"">Share text</button>
     </div>
     <p>Created and maintained by Average Wizard</p>
   </div>

@@ -64,6 +64,20 @@ if (modifiers.beeQuotes) {
 // ------------
 function openSharingWindow() {
 	document.getElementById("sharing-window").style.display = "flex";
+	document.getElementById("inputBox").style.display = "none";
+
+	document.getElementById("sharing-input").value = "http://wizardlywonders.xyz/fallingtext/?text=" + encodeURIComponent(input.value);
+}
+
+function closeSharingWindow() {
+	document.getElementById("sharing-window").style.display = "none";
+	
+	if (!modifiers.beeQuotes && !params.get("text")) document.getElementById("inputBox").style.display = "block";
+}
+
+function copyShareURL() {
+	document.getElementById("sharing-input").select();
+	document.execCommand('copy');
 }
 
 
@@ -79,10 +93,6 @@ if (document.getElementById("btn_beeQuote")) {
 		newBeeQuote();
 	});
 }
-
-document.getElementById("btn_share").addEventListener("click", function(e) {
-	openSharingWindow();
-});
 
 
 // Start the falling timer
