@@ -17,6 +17,18 @@ function setSpawnRate(msRate) {
 	}, msRate);
 }
 
+// ---------------
+//   API Access
+// ---------------
+function newBeeQuote() {
+	getBeeQuote().then((quote) => {
+		// Set input box's value to the quote (doesn't show up but used for data)
+		input.value = quote;
+		// Set spawn rate depending on length of the quote
+		let lengthMod = Math.floor(quote.length / 20);
+		setSpawnRate(100 + lengthMod * 25);
+	})
+}
 
 // -----------
 //  Url stuff
@@ -33,18 +45,25 @@ modifiers.beeQuotes = (params.get("beeQuotes") === "true");
 let text = params.get("text");
 if (!text && !modifiers.beeQuotes) {
 	document.getElementById("inputBox").style.display = "block";
+// else show the new bee quote button
+}
+if (!modifiers.beeQuotes) {
+	let btn = document.getElementById("btn_beeQuote");
+	btn.parentElement.removeChild(btn);
 }
 
 // Set the falling text to either the text query or a quote from the bee API
 if (text) input.value = text;
 if (modifiers.beeQuotes) {
-	getBeeQuote().then((quote) => {
-		// Set input box's value to the quote (doesn't show up but used for data)
-		input.value = quote;
-		// Set spawn rate depending on length of the quote
-		let lengthMod = Math.floor(quote.length / 20);
-		setSpawnRate(100 + lengthMod*25);
-	})
+	newBeeQuote();
+}
+
+
+// ------------
+//   Sharing
+// ------------
+function openSharingWindow() {
+	document.getElementById("sharing-window").style.display = "flex";
 }
 
 
@@ -53,6 +72,16 @@ if (modifiers.beeQuotes) {
 // ---------------
 document.getElementById("toggleRainbow").addEventListener("click", function(e) {
 	modifiers.rainbow = !modifiers.rainbow;
+});
+
+if (document.getElementById("btn_beeQuote")) {
+	document.getElementById("btn_beeQuote").addEventListener("click", function(e) {
+		newBeeQuote();
+	});
+}
+
+document.getElementById("btn_share").addEventListener("click", function(e) {
+	openSharingWindow();
 });
 
 

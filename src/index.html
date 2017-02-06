@@ -4,18 +4,36 @@
   <title>8 Ball</title>
   <meta charset="UTF-8">
 
+  <!-- Polyfill -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.1/fetch.min.js"></script>
   <script src="https://cdn.rawgit.com/WebReflection/url-search-params/master/build/url-search-params.js"></script>
+
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
   <div id="inputBox">
     <input id="input" type="text" name="question" maxlength="50">
-    <div id="buttons">
+    <div id="input-box-buttons">
       <button id="toggleRainbow">Rainbow</button>
-      <!-- <button id="btn_beeQuote">New quote</button> -->
     </div>
+  </div>
+
+  <div id="sharing-window">
+    <h1>OH HELLO THERE</h1>
+    <p>http://wizardlywonders.xyz/fallingtext/?text=whoah</p>
+    <div id="sharing-buttons">
+      <button>Copy to clipboard</button>
+      <button>Close</button>
+    </div>
+  </div>
+
+  <div id="footer">
+    <div id="footer-buttons">
+      <button id="btn_beeQuote">New quote</button>
+      <button id="btn_share">Share text</button>
+    </div>
+    <p>Created and maintained by Average Wizard</p>
   </div>
 
   <script src="api.js"></script>
