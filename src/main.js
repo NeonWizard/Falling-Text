@@ -66,7 +66,10 @@ function openSharingWindow() {
 	document.getElementById("sharing-window").style.display = "flex";
 	document.getElementById("inputBox").style.display = "none";
 
-	document.getElementById("sharing-input").value = "http://wizardlywonders.xyz/fallingtext/?text=" + encodeURIComponent(input.value);
+	document.getElementById("sharing-input").value =
+		"https://wizardlywonders.xyz/fallingtext/?text=" + encodeURIComponent(input.value)
+		+ (modifiers.rainbow ? "&rainbow=true" : "")
+		+ (modifiers.reverse ? "&reverse=true" : "");
 }
 
 function closeSharingWindow() {
