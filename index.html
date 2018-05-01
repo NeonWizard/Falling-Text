@@ -1,48 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>8 Ball</title>
-  <meta charset="UTF-8">
+	<title>8 Ball</title>
+	<meta charset="UTF-8">
 
-  <!-- Polyfill -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.1/fetch.min.js"></script>
-  <script src="https://cdn.rawgit.com/WebReflection/url-search-params/master/build/url-search-params.js"></script>
+	<!-- Polyfill -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.1/fetch.min.js"></script>
+	<script src="https://cdn.rawgit.com/WebReflection/url-search-params/master/build/url-search-params.js"></script>
 
-  <link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
-  <div id="inputBox">
-    <input id="input" type="text" name="question" maxlength="50">
-    <div id="input-box-buttons">
-      <button id="toggleRainbow">Rainbow</button>
-    </div>
-  </div>
+	<div id="inputBox">
+		<input id="input" type="text" name="question" maxlength="50">
+		<div id="input-box-buttons">
+			<button id="toggleRainbow">Rainbow</button>
+		</div>
+	</div>
 
-  <div id="sharing-window">
-    <div>
-    <h1>Share Text</h1>
-    <p>Select the text and press ctrl+c, or hit the "Copy to clipboard" button.</p>
-    </div>
-    <div>
-    <input id="sharing-input" type="text" value="http://wizardlywonders.xyz/fallingtext/?text=whoah" readonly>
-    <div id="sharing-buttons">
-      <button onclick="copyShareURL()">Copy to clipboard</button>
-      <button onclick="closeSharingWindow()">Close</button>
-    </div>
-    </div>
-  </div>
+	<div id="sharing-window">
+		<div>
+		<h1>Share Text</h1>
+		<p>Select the text and press ctrl+c, or hit the "Copy to clipboard" button.</p>
+		</div>
+		<div>
+		<input id="sharing-input" type="text" value="http://wizardlywonders.xyz/fallingtext/?text=whoah" readonly>
+		<div id="sharing-buttons">
+			<button onclick="copyShareURL()">Copy to clipboard</button>
+			<button onclick="closeSharingWindow()">Close</button>
+		</div>
+		</div>
+	</div>
 
-  <div id="footer">
-    <div id="footer-buttons">
-      <button id="btn_beeQuote">New quote</button>
-      <button id="btn_share" onclick="openSharingWindow()"">Share text</button>
-    </div>
-    <p>Created and maintained by Average Wizard</p>
-  </div>
+	<div id="footer">
+		<div id="footer-buttons">
+			<button id="btn_beeQuote">New quote</button>
+			<button id="btn_share" onclick="openSharingWindow()"">Share text</button>
+		</div>
+		<p>Created and maintained by Average Wizard</p>
+	</div>
 
-  <script src="api.js"></script>
-  <script src="falling.js"></script>
-  <script src="main.js"></script>
+	<script src="api.js"></script>
+	<script src="falling.js"></script>
+	<script src="main.js"></script>
 </body>
 </html>
