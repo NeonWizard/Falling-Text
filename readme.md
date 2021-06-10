@@ -19,8 +19,3 @@ Create a simple client web application that demonstrates certain requirements.
 - Include `?beeQuotes=true` to have a randomly chosen quote from the Bee Movie fall from the top of the screen.
 
 <br>
-
-## Information
-Name: Wesley Miravete
-
-Dixie ID: D00322349
